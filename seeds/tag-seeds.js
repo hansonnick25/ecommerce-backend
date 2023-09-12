@@ -1,4 +1,4 @@
-const { Tag } = require('../models');
+const { Tag } = require('../models')
 
 const tagData = [
   {
@@ -25,8 +25,8 @@ const tagData = [
   {
     tag_name: 'pop culture',
   },
-];
+]
 
-const seedTags = () => Tag.bulkCreate(tagData);
+const seedTags = () => Tag.bulkCreate(tagData)
 
-module.exports = seedTags;
+module.exports = seedTags
