@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
       // be sure to include its associated Category and Tag data
       include: [{ model: Category }, { model: Tag }],
     })
-    res.status(200).json(categoryData)
+    res.status(200).json(productData)
   } catch (error) {
     res.status(500).json(error)
   }
@@ -25,6 +25,7 @@ router.get('/:id', async (req, res) => {
       // be sure to include its associated Category and Tag data
       include: [{ model: Category }, { model: Tag }],
     })
+    res.status(200).json(productData)
   } catch (error) {
     res.status(500).json(error)
   }
@@ -114,6 +115,7 @@ router.delete('/:id', async (req, res) => {
         id: req.params.id,
       },
     })
+    res.status(200).json(productData)
   } catch (error) {
     res.status(500).json(error)
   }
