@@ -1,5 +1,4 @@
 const router = require('express').Router()
-const { includes } = require('lodash')
 const { Category, Product } = require('../../models')
 
 // The `/api/categories` endpoint
@@ -24,6 +23,7 @@ router.get('/:id', async (req, res) => {
       // be sure to include its associated Products
       include: [{ model: Product }],
     })
+    res.status(200).json(categoryData)
   } catch (error) {
     res.status(500).json(error)
   }
@@ -47,6 +47,7 @@ router.put('/:id', async (req, res) => {
         id: req.params.id,
       },
     })
+    res.status(200).json(categoryData)
   } catch (error) {
     res.status(500).json(error)
   }
@@ -60,6 +61,7 @@ router.delete('/:id', async (req, res) => {
         id: req.params.id,
       },
     })
+    res.status(200).send('Category deleted')
   } catch (error) {
     res.status(500).json(error)
   }
